@@ -1,2 +1,0 @@
-- name: Install tkinter
-  run: sudo apt-get install -y python3-tk
