@@ -1,4 +1,0 @@
-tkinter
-ttkbootstrap
-pygame
-time
