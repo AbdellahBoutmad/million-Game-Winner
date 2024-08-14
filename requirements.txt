@@ -1,0 +1,4 @@
+tkinter
+ttkbootstrap
+pygame
+time
