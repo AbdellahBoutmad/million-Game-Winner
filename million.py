@@ -1,7 +1,6 @@
 from tkinter import *
 import ttkbootstrap as tb
-import pygame
-import time
+
 questions = [
     {
         "question": "ما هي عاصمة فرنسا؟",
@@ -187,25 +186,10 @@ questions = [
 home = tb.Window(themename="solar")
 home.geometry("400x400")
 home.title("من سيربح الدرهم")
-home.iconbitmap("icon.ico")
+
 question_afficher = 0
 
 
-
-def play_music_tr():
-    pygame.mixer.init()
-    pygame.mixer.music.load("correct.mp3")
-    pygame.mixer.music.play()
-    home.after(3000, stop_music)
-
-def play_musi_fl():
-    pygame.mixer.init()
-    pygame.mixer.music.load("false.mp3")
-    pygame.mixer.music.play()
-    home.after(3000, stop_music)
-
-def stop_music():
-    pygame.mixer.music.stop()
 
 
 def check(answer_index):
@@ -214,7 +198,7 @@ def check(answer_index):
     correct_answer = questions[question_afficher]["correct_answer"]
     
     if user_answer == correct_answer:
-        play_music_tr()
+      
         question_afficher += 1
 
         if question_afficher < len(questions):
@@ -224,7 +208,7 @@ def check(answer_index):
             mil.pack()
             exit
     else:
-        play_musi_fl()
+       
         for i in range(3):
             answer_buttons[i].configure(style="danger.Outline.TButton")
         answer_buttons[questions[question_afficher]["answers"].index(correct_answer)].configure(style="success.Outline.TButton")
